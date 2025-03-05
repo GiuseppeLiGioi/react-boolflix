@@ -7,3 +7,14 @@
 html{
   font-family: sans-serif;
 }
+.header_div{
+  display: flex;
+  justify-content: space-between;
+  background-color: black;
+  height: 5vh;
+}
+.title_header{
+  color: red;
+  margin-top: 10px;
+ 
+}

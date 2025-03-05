@@ -7,7 +7,7 @@ const port = 3000;
 
 
 app.use(cors({
-origin: process.env.URL
+origin: "http://localhost:5173"
 }));
 
 
