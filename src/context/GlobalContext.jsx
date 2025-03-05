@@ -14,6 +14,7 @@ const GlobalProvider = ( {children} ) => {
     const fetchMovies = () => {
         axios.get(url + `/movie/popular?api_key=${api_key}`)
         .then(res => setMovies(res.data.results))
+        .catch((error) => console.error(error))
     }
 
 
@@ -21,6 +22,7 @@ const GlobalProvider = ( {children} ) => {
 const fetchQuery = ( query ) => {
     axios.get(url +  `/search/movie?api_key=${api_key}&query=${query}`)
     .then(res => setMovies(res.data.results))
+    .catch((error) => console.error(error))
 }
 
 const value = {

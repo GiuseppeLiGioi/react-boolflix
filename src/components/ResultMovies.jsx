@@ -6,7 +6,7 @@ const ResultMovies = () => {
     //verifico prima di mappare l'array che ci sia qualcosa al suo interno, con una condizione.
     if(movies.length === 0){
        return (
-       <p>"Nessun Film trovato"</p>
+       <p>"Caricamento film..."</p>
        )
     }
 
