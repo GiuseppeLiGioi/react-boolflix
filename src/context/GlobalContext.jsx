@@ -27,7 +27,9 @@ const value = {
     movies,
     query,
     fetchMovies,
-    fetchQuery
+    fetchQuery, 
+    setMovies, 
+    setQuery
 } 
 
 
