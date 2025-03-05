@@ -4,7 +4,7 @@ import { useEffect } from "react";
 
 const SearchBar = () => {
 
-    const{query, fetchQuery, setQuery, fetchMovies} = useGlobalContext();
+    const{query, fetchQuery, setQuery, fetchMovies, movies} = useGlobalContext();
 
     useEffect(() => {
         if(query.trim() !== ""){
@@ -36,8 +36,11 @@ const SearchBar = () => {
             <button type="submit" className="btn_searchbar">Cerca</button>
 
             </form>
-            
         </div>
+
+        
+        
+       
     )
 }
 
