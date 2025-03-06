@@ -2,24 +2,25 @@ import { useGlobalContext } from "../context/GlobalContext";
 
 
 const ResultSeries = () => {
-    const { series } = useGlobalContext();
+    const { series, voteStar } = useGlobalContext();
     //verifico prima di mappare l'array che ci sia qualcosa al suo interno, con una condizione.
     if(series.length === 0){
        return (
-       <p>"Caricamento film..."</p>
+       <p>"Caricamento serie tv..."</p>
        )
     }
 
     
     return(
         <ul>
+            <h1 className="title_">LE NOSTRE SERIE TV POPOLARI</h1>
             {
-                movies.map((movie) => ( // qua metto parentesi tonde perchè cosi ho il return implicito
-                <li key={movie.id}>
-                 <h3> Titolo del film: {movie.title}</h3>   
-                 <h4> Titolo originale del film: {movie.original_title}</h4>
-                 <p> Lingua del film: {movie.original_language}</p>
-                 <p> Voto del film: {movie.vote_average}</p>
+                series.map((serie) => ( // qua metto parentesi tonde perchè cosi ho il return implicito
+                <li key={serie.id}>
+                 <h3> Titolo della serie tv: {serie.name}</h3>   
+                 <h4> Titolo originaledella serie tv: {serie.original_name}</h4>
+                 <p> Lingua della serie tv: {serie.original_language}</p>
+                 <p> Voto della serie tv: {voteStar(serie.vote_average)}</p>
                 </li> 
                 ))
             }

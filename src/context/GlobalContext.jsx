@@ -40,6 +40,19 @@ const fetchQuerySeries = ( query ) => {
     .catch((error) => console.error(error))
 }
 
+//faccio la funzione per convertire il voto decimale in stelle
+function voteStar (vote)  {
+const nStar = Math.ceil(vote / 2 );
+let stars = [];
+for (let i = 0; i < nStar; i++){
+    stars.push('⭐');
+}
+for (let i = nStar; i < 5; i++){
+    stars.push('☆')
+}
+return stars.join('')  //utilizzo il .join per ritornare il risultato come stringa
+}
+
 const value = {
     movies,
     queryMovie,
@@ -52,7 +65,8 @@ const value = {
     setMovies, 
     setQueryMovie,
     setSeries,
-    setQuerySeries
+    setQuerySeries,
+    voteStar
 } 
 
 

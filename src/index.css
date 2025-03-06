@@ -24,3 +24,8 @@ html{
   margin-left: 10px;
   margin-top: 15px;
 }
+
+.title_{
+  color: red;
+  margin-top: 2rem;
+}
