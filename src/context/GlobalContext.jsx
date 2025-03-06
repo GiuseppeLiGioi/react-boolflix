@@ -53,6 +53,13 @@ for (let i = nStar; i < 5; i++){
 return stars.join('')  //utilizzo il .join per ritornare il risultato come stringa
 }
 
+
+//Creo una funzione che trasforma la lingua originale in bandiera.
+function fetchFlag (lang) {
+    return `https://flagcdn.com/w20/${lang}.png`
+
+}
+
 const value = {
     movies,
     queryMovie,
@@ -62,6 +69,7 @@ const value = {
     fetchQueryMovie,
     fetchQuerySeries,
     fetchSeries, 
+    fetchFlag,
     setMovies, 
     setQueryMovie,
     setSeries,
