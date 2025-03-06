@@ -9,7 +9,9 @@ const url = `${import.meta.env.VITE_URL}`;
 
 const GlobalProvider = ( {children} ) => {
     const [movies, setMovies] = useState([]);
-    const [query, setQuery] = useState("");
+    const [series, setSeries] = useState([]);
+    const [queryMovie, setQueryMovie] = useState("");
+    const [querySeries, setQuerySeries] = useState("");
 
     const fetchMovies = () => {
         axios.get(url + `/movie/popular?api_key=${api_key}`)
@@ -17,21 +19,40 @@ const GlobalProvider = ( {children} ) => {
         .catch((error) => console.error(error))
     }
 
+    const fetchSeries = () => {
+        axios.get(url + `/tv/popular?api_key=${api_key}`)
+        .then(res => setSeries(res.data.results))
+        .catch((error) => console.error(error))
+    }
 
 
-const fetchQuery = ( query ) => {
+
+const fetchQueryMovie = ( query ) => {
     axios.get(url +  `/search/movie?api_key=${api_key}&query=${query}`)
     .then(res => setMovies(res.data.results))
     .catch((error) => console.error(error))
 }
 
+
+const fetchQuerySeries = ( query ) => {
+    axios.get(url +  `/search/tv?api_key=${api_key}&query=${query}`)
+    .then(res => setSeries(res.data.results))
+    .catch((error) => console.error(error))
+}
+
 const value = {
     movies,
-    query,
+    queryMovie,
+    series,
+    querySeries,
     fetchMovies,
-    fetchQuery, 
+    fetchQueryMovie,
+    fetchQuerySeries,
+    fetchSeries, 
     setMovies, 
-    setQuery
+    setQueryMovie,
+    setSeries,
+    setQuerySeries
 } 
 
 
