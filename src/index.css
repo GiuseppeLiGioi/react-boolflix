@@ -29,3 +29,10 @@ html{
   color: red;
   margin-top: 2rem;
 }
+
+.container_cards{
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+

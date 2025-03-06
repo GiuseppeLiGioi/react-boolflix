@@ -1,4 +1,5 @@
 import { useGlobalContext } from "../context/GlobalContext";
+import MoviesCard from "./MoviesCard";
 
 
 const ResultMovies = () => {
@@ -13,19 +14,15 @@ const ResultMovies = () => {
 
     
     return(
-        <ul>
-             <h1 className="title_">I NSOTRI FILM POPOLARI</h1>
+        <div>
+             <h1 className="title_">I NOSTRI FILM POPOLARI</h1>
             {
                 movies.map((movie) => ( // qua metto parentesi tonde perchè cosi ho il return implicito
-                <li key={movie.id}>
-                 <h3> Titolo del film: {movie.title}</h3>   
-                 <h4> Titolo originale del film: {movie.original_title}</h4>
-                 <p> Lingua del film:<img src={fetchFlag(movie.original_language)}></img></p>
-                 <p> Voto del film: {voteStar(movie.vote_average)}</p>
-                </li> 
-                ))
-            }
-        </ul>
+                <MoviesCard key={movie.id} movie={movie} /> //passo movie come prop al componente MoviesCard, in modo da gestirne 
+
+           ))}
+
+        </div>
         
     )
 }
